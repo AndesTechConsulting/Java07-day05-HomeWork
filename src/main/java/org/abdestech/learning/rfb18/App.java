@@ -1,10 +1,19 @@
 package org.abdestech.learning.rfb18;
 
 
-public class App 
+import java.util.ArrayList;
+
+public class App
 {
     public static void main( String[] args )
     {
+
+        Summator<Integer> a1 = new Summator<Integer>(12,22);
+        a1.add();
+        ArrayList<String> books = new ArrayList<String>();
+        books.add("First");
+        System.out.println(books.get(0));
+
 
         /**
          *
@@ -21,16 +30,7 @@ public class App
          *    количество книг; В качестве реализации хранилища использовать
          *    коллекцию ArrayList.
          *
-         * 3. (Дополнительно, кто успеет)
-         *    Интегрировать процесс работы с книгами: организовать выдачу, приём и
-         *    учёт книг в Library. Генерировать исключение OutOfLibException,
-         *    при попытке выдачи книги, которой нет в библиотеке. Генерировать исключение
-         *    BookIsReservedException,
-         *    при попытке выдачи книги, которая уже на руках или зарезервирована.
-         *
-         *
-         * 4. В методе main проверить работу классов.
-         *
+
          *
          */
 
