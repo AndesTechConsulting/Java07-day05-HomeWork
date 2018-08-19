@@ -30,10 +30,10 @@ public class Summator<T extends Number> {
             this.secondNumber = secondNumber;
     }
 
-    public void add (){
+   /* public void add (){
             this.firstNumber = firstNumber;
             this.secondNumber = secondNumber;
-            System.out.println(firstNumber.intValue() + secondNumber.intValue());
-        }
+            System.out.println(firstNumber + secondNumber);
+        }*/
     }
 
