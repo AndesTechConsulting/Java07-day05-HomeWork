@@ -1,7 +1,10 @@
 package org.abdestech.learning.rfb18;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -31,7 +34,16 @@ public class App
          *
          *
          */
-
+//проверка добавления книг в библиотеку
+        Library.addBooks();
+        Library.addSomeBooks();
+        System.out.println("В библиотеке "+Library.books.size()+" книг:");
+        for(int i = 0; i < Library.books.size(); i++){
+        System.out.println((Library.books.get(i).getAuthor() + ", \""+Library.books.get(i).getTitle()
+        +"\", "+Library.books.get(i).getYear()+", "+Library.books.get(i).getISBN() ));
+        }
 
     }
+
 }
+
