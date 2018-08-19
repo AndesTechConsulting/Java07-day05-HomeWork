@@ -1,10 +1,8 @@
 package org.abdestech.learning.rfb18;
 
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
 
         /**
          *
@@ -31,7 +29,20 @@ public class App
          *
          *
          */
-
-
+            try {
+                double result1 = Sumator.add(Integer.parseInt(args[0]),
+                        Integer.parseInt(args[1]));
+                System.out.println("Результат сложения " + args[0] + " + " + args[1] + " - >  " + result1);
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Не передано ниодного числа ");
+            }
+            catch(NumberFormatException e) {
+                    System.out.println("Введены нечисловые значения!");
+            }
+            Book bk1 = new Book();
+            bk1.setYear(2020);
     }
 }
+
+
