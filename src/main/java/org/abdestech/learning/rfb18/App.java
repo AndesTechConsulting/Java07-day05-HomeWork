@@ -34,8 +34,12 @@ public class App
          *
          *
          */
+//        Summator sum1 = new Summator(6000,455);
+//        sum1.checkSum();
+//        System.out.println("Сумма =" + sum1.getSum());
+//        System.out.println("----------------------");
 //проверка добавления книг в библиотеку
-        Library.addBooks();
+        //Library.addBooks();//метод для ручного ввода книг, закомментирован для ускорения проверки
         Library.addSomeBooks();
         System.out.println("В библиотеке "+Library.books.size()+" книг:");
         for(int i = 0; i < Library.books.size(); i++){
