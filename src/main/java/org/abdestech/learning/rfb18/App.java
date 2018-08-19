@@ -6,6 +6,12 @@ public class App
     public static void main( String[] args )
     {
 
+        Library library1=new Library();
+        System.out.println("Библиотека книг");
+        library1.putBook("Иван Сергеевич Тургенев","Дворянское гнездо","1856","545456-151dfdf-2 64");
+        library1.putBook("Антон Павлович Чехов","Дом с мезонином","1896","5454-54545k-4545-454");
+        library1.getlibrary();
+
         /**
          *
          * Домашня работа на выходные дни.
