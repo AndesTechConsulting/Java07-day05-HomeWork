@@ -1,10 +1,13 @@
 package org.abdestech.learning.rfb18;
 
 
-public class App 
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.util.List;
+
+public class App
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws BookIsReservedException {
 
         /**
          *
@@ -33,7 +36,24 @@ public class App
          *
          *
          */
+        //Задание 1
+        Summator<Double> summator = new Summator<>();
+        System.out.println(summator.sum(424, 4444.2222 ));
 
+        //Задание 2
+        Book book =  new Book("www", "eee", Date.valueOf("1991-01-01"), "jdj3");
+        System.out.println(book.toString());
 
+        //Задание 3
+        Library library = new Library();
+        library.addBook(book);
+        library.addBook(new Book("А. С. Пушкин", "Руслан и Людмила", Date.valueOf("1991-01-01"),"r213"));
+        System.out.println("Before: " + library.getStorage());
+        System.out.println();
+        System.out.println("take a book, please: " + library.getRequiredBook("dfhg"));
+        System.out.println();
+        System.out.println("After: " + library.getStorage());
     }
+
+
 }
