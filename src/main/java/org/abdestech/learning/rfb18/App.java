@@ -40,6 +40,7 @@ public class App {
             catch(NumberFormatException e) {
                     System.out.println("Введены нечисловые значения!");
             }
+
             Book bk1 = new Book();
             bk1.setYear(2020);
     }

@@ -1,6 +1,18 @@
 package org.abdestech.learning.rfb18;
 
-import java.util.Calendar;
+import java.util.UUID;
+
+class OutFromFutureException extends Exception {
+
+    private String message = "";
+
+    OutFromFutureException(String message) {
+
+    }
+}
+
+
+
 
 public class Book {
 
@@ -10,7 +22,15 @@ public class Book {
     Book(){
         author = "No name";
         title = "[Empty]";
-        ISBN =
+        ISBN = UUID.randomUUID().toString();
+
+        year = Utils.currentYear();
+    }
+
+    Book(String author, String title){
+        author = "No name";
+        title = "[Empty]";
+        ISBN = UUID.randomUUID().toString();
     }
 
     public String getAuthor() {
@@ -35,17 +55,23 @@ public class Book {
 
     public void setYear(int y) {
         short year = (short) y;
-        Calendar currentMoment = Calendar.getInstance();
-        int currentYear = currentMoment.get(Calendar.YEAR);
-        if (currentYear >= year) {
+        if ( Utils.currentYear() >= year) {
             this.year = year;
         } else {
-            System.out.println("Невозможно назначить год издания книги больше текущего!");
+
         }
     }
 
     public String getISBN() {
         return ISBN;
+    }
+
+    public String toString() {
+        String str = ISBN + " / " +
+                     author + ", " +
+                     title + " " +
+                     year;
+        return str;
     }
 
 }
