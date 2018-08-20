@@ -3,7 +3,7 @@ package org.abdestech.learning.rfb18;
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void main(String[] args )
     {
 
         /**
@@ -33,6 +33,27 @@ public class App
          *
          *
          */
+
+
+        Library lib1 = new Library();
+
+        Book book1 = new Book("Война и мир", "Лев Толстой", "1869", "ISBN-374-23");
+        lib1.addBookToBookList("book1");
+        Book book2 = new Book("Мастер и Маргарита", "Михаил Булгаков", "1966", "ISBN-987-45");
+        lib1.addBookToBookList("book2");
+
+
+
+        lib1.getBookToRead("book1");
+        lib1.getBookToRead("book1");
+
+        lib1.returnBook("book1");
+        lib1.getBookToRead("book1");
+
+
+        lib1.getListOfBooks();
+        book1.getBookInfo();
+        book2.getBookInfo();
 
 
     }
