@@ -3,16 +3,10 @@ package org.abdestech.learning.rfb18;
 import java.util.UUID;
 
 class OutFromFutureException extends Exception {
-
-    private String message = "";
-
-    OutFromFutureException(String message) {
-
+    OutFromFutureException(short invalidYear) {
+        System.out.println("Попытка определения для книги будущего года: " + invalidYear);
     }
 }
-
-
-
 
 public class Book {
 
@@ -27,9 +21,10 @@ public class Book {
         year = Utils.currentYear();
     }
 
-    Book(String author, String title){
-        author = "No name";
-        title = "[Empty]";
+    Book(String author, String title, int year) throws OutFromFutureException{
+        this.author = author;
+        this.title = title;
+        setYear(year);
         ISBN = UUID.randomUUID().toString();
     }
 
@@ -53,12 +48,12 @@ public class Book {
         return year;
     }
 
-    public void setYear(int y) {
+    public void setYear(int y) throws OutFromFutureException{
         short year = (short) y;
         if ( Utils.currentYear() >= year) {
             this.year = year;
         } else {
-
+            throw new OutFromFutureException(year);
         }
     }
 
@@ -75,3 +70,4 @@ public class Book {
     }
 
 }
+
