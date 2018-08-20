@@ -1,10 +1,32 @@
 package org.abdestech.learning.rfb18;
 
 
-public class App 
+import java.util.ArrayList;
+
+public class App
 {
     public static void main( String[] args )
     {
+        ArrayList<Book> books = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            books.add(new Book("author" + i, "title" + i, 2000 + i, "123"));
+        }
+
+        System.out.println(books.toString());
+        Library lib = new Library(books);
+
+        System.out.println("-------------------------");
+        System.out.println(lib.toString());
+
+        Summator sum = new Summator();
+
+        System.out.println("-------------------------");
+        System.out.println(sum.calculate(100,200));
+        System.out.println(sum.calculate(-100,200));
+        System.out.println(sum.calculate(100.25,200.345));
+        System.out.println(sum.calculate(100,-100));
+
 
         /**
          *
