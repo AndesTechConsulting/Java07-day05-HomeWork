@@ -27,6 +27,16 @@ public class App
         System.out.println(sum.calculate(100.25,200.345));
         System.out.println(sum.calculate(100,-100));
 
+        System.out.println("----------OR--------------");
+        try {
+            System.out.println(sum.calc((double)100,(double)200));
+            System.out.println(sum.calc((byte)100,(byte)(-100)));
+            System.out.println(sum.calc((float)100.25,(float)200.345));
+            System.out.println(sum.calc(-100,200));
+        }
+        catch (ClassCastException ex){
+            System.out.println("Cannot cast from one type to another" + ex.getMessage());
+        }
 
         /**
          *

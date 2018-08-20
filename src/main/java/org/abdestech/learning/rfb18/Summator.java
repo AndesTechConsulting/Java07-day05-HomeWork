@@ -20,4 +20,8 @@ public class Summator {
         setB(b);
         return a + b;
     }
+
+    public static <T extends Number> double calc(T a, T b){
+        return (double)a + (double)b;
+    }
 }
