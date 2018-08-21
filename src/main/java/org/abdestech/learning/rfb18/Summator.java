@@ -1,8 +1,8 @@
 package org.abdestech.learning.rfb18;
 
 
-import java.util.Scanner;
-//сумматор по-прежнему не работает
+
+
 public class Summator<T> {
     private T a;
     private T b;
@@ -15,7 +15,7 @@ public class Summator<T> {
 
 
         public double checkSum (){
-            this.sum = (double)a+(double)b;
+            this.sum = (Double) a+(Double) b;
             return sum;
         }
 
