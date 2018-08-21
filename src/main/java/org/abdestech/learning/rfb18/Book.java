@@ -14,10 +14,9 @@ public class Book {
     }
 
 
-//корректно переопределить метод toString мне не удалось
-    @Override
+
     public String toString() {
-        return null;
+        return author + ", "+title+", "+year+", "+ISBN;
     }
 
 

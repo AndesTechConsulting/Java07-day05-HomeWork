@@ -34,11 +34,16 @@ public class App
          *
          *
          */
-//        Summator sum1 = new Summator(6000,455);
-//        sum1.checkSum();
-//        System.out.println("Сумма =" + sum1.getSum());
-//        System.out.println("----------------------");
-//проверка добавления книг в библиотеку
+        // проверка сумматора
+        Summator<Double> sum1 = new Summator ((double)6000,(double)455);
+        sum1.checkSum();
+        System.out.println("Сумма =" + sum1.getSum());
+        System.out.println("----------------------");
+        //проверка метода toString
+        Book b1 = new Book("Чак Паланик", "Бойцовский клуб", "1996", "5678");
+        System.out.println(b1.toString());
+        System.out.println("----------------------");
+        //проверка добавления книг в библиотеку
         //Library.addBooks();//метод для ручного ввода книг, закомментирован для ускорения проверки
         Library.addSomeBooks();
         System.out.println("В библиотеке "+Library.books.size()+" книг:");

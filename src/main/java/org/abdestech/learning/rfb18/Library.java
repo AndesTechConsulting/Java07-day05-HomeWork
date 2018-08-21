@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Library {
+    Library library = new Library();
 
    static ArrayList<Book> books = new ArrayList();
 
