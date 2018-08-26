@@ -40,9 +40,28 @@ public class App {
             catch(NumberFormatException e) {
                     System.out.println("Введены нечисловые значения!");
             }
+            Library fstLibrary = new Library("Greate Library", "Aviagorodok str, 9", 1000);
+            try {
+                fstLibrary.addBook("Парфюмер", "Патрик Зюскинд", 2016);
+                fstLibrary.addBook("1984", "Оруэл", 1983);
+                fstLibrary.addBook("Война и мир", "Л. Толстой", 1967);
+                fstLibrary.addBook("Мёртвые души", "Н. Гоголь", 1989);
+                fstLibrary.addBook("Мцыри", "М. Лермонтов", 2010);
+                fstLibrary.addBook("Чайник для ПК", "Чайник", 2018);
+                fstLibrary.addBook("Руководство пользователя гравитацией", "Некто Н", 2015);
 
-            Book bk1 = new Book();
-            bk1.setYear(2020);
+            } catch (OutFromFutureException e) {
+
+            }
+            try {
+                System.out.println(fstLibrary.books.size());
+                fstLibrary.getBook("1984", "Оруэл", 1983);
+                fstLibrary.getBook("Мёртвые души", "Н. Гоголь", 1989);
+            } catch(OutOfLibException e) {
+
+            } catch (SpoiledBookException e) {
+
+            }
     }
 }
 

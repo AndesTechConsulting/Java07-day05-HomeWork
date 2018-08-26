@@ -2,37 +2,36 @@ package org.abdestech.learning.rfb18;
 
 import java.util.UUID;
 
-class OutFromFutureException extends Exception {
-    OutFromFutureException(short invalidYear) {
-        System.out.println("Попытка определения для книги будущего года: " + invalidYear);
-    }
-}
+
 
 public class Book {
 
     private String author, title, ISBN;
     private short year;
-
+    private String bookStatus;
+//--------------------------------------------
     Book(){
         author = "No name";
         title = "[Empty]";
         ISBN = UUID.randomUUID().toString();
-
         year = Utils.currentYear();
+        bookStatus = "Spoiled";
+
     }
 
-    Book(String author, String title, int year) throws OutFromFutureException{
+    Book(String author, String title, int year, String bookStatus) throws OutFromFutureException{
         this.author = author;
         this.title = title;
         setYear(year);
         ISBN = UUID.randomUUID().toString();
+        this.bookStatus = bookStatus;
     }
-
+//---------------------------------------------
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    void setAuthor(String author) {
         this.author = author;
     }
 
@@ -40,7 +39,7 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
+    void setTitle(String title) {
         this.title = title;
     }
 
@@ -48,7 +47,7 @@ public class Book {
         return year;
     }
 
-    public void setYear(int y) throws OutFromFutureException{
+    void setYear (int y) throws OutFromFutureException{
         short year = (short) y;
         if ( Utils.currentYear() >= year) {
             this.year = year;
@@ -62,11 +61,25 @@ public class Book {
     }
 
     public String toString() {
+
         String str = ISBN + " / " +
                      author + ", " +
                      title + " " +
                      year;
         return str;
+    }
+
+    public String getBookStatus() {
+        return bookStatus;
+    }
+
+    boolean changeBookStatus(String newStatus) {
+        if (newStatus != bookStatus) {
+            bookStatus = newStatus;
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
