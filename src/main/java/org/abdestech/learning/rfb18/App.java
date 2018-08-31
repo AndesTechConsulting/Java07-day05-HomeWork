@@ -55,8 +55,10 @@ public class App {
             }
             try {
                 System.out.println(fstLibrary.books.size());
-                fstLibrary.getBook("1984", "Оруэл", 1983);
-                fstLibrary.getBook("Мёртвые души", "Н. Гоголь", 1989);
+                Book gbk1 = fstLibrary.getBook("1984", "Оруэл", 1983);
+                Book gbk2 = fstLibrary.getBook("Мёртвые души", "Н. Гоголь", 1989);
+                System.out.println(gbk1);
+                System.out.println(gbk2);
             } catch(OutOfLibException e) {
 
             } catch (SpoiledBookException e) {
