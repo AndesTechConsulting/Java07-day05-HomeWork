@@ -66,9 +66,10 @@ public class Library  {
     public Book getBook(String BkTitle, String BkAuthor, int BkY)
             throws OutOfLibException, SpoiledBookException {
             short BkYear = (short) BkY;
-        for(int i = 1; i <= BkIndex; i++) {
+        for(int i = 0; i < BkIndex; i++) {
             Book bk = books.get(i);
-            if( BkTitle == bk.getTitle() && BkAuthor == bk.getAuthor() && BkYear == bk.getYear()) {
+
+            if( BkTitle.equals(bk.getTitle()) && (BkAuthor.equals(bk.getAuthor())) && (BkYear == bk.getYear())) {
                 if (bk.getBookStatus() == booksStatus[2]) {
                     throw new OutOfLibException();
                 }
@@ -76,13 +77,14 @@ public class Library  {
                     throw new SpoiledBookException();
                 }
                 System.out.println("Книга найдена");
-                bk.changeBookStatus(booksStatus[2]);
+                bk.setBookStatus(booksStatus[2]);
                 System.out.println("Статус книги изменен на " + bk.getBookStatus());
                 return bk;
             } else {
                 continue;
             }
         }
+        System.out.println("Книга не найдена");
         return null;
     }
 
@@ -92,7 +94,7 @@ public class Library  {
         Book[] foundBks = new Book [volume>>1];
         int j = 0;
 
-        for(int i = 1; i <= BkIndex; i++) {
+        for(int i = 1; i < BkIndex; i++) {
             bk = books.get(i);
             if( BTitle == bk.getTitle()) {
                 foundBks[j] = bk;
@@ -123,10 +125,9 @@ public class Library  {
             System.out.println("Книга не числится в библиотеке");
         } else {
             bk = books.get(index);
-            bk.changeBookStatus(booksStatus[0]);
+            bk.setBookStatus(booksStatus[0]);
         }
         return false;
     }
-
 }
 
