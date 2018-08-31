@@ -19,7 +19,7 @@ public class Book {
 
     }
 
-    Book(String author, String title, int year, String bookStatus) throws OutFromFutureException{
+  Book(String title, String author, int year, String bookStatus) throws OutFromFutureException{
         this.author = author;
         this.title = title;
         setYear(year);
